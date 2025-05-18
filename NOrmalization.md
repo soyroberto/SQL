@@ -1,3 +1,47 @@
+**A Functional Dependency (FD) is a relationship between attributes in a database table, where one attribute uniquely determines another. For example, if StudentID → StudentName, it means that knowing the StudentID lets you find exactly one StudentName. FDs help in organizing and normalising data by identifying how attributes depend on each other**
+--------------
+
+
+
+      Given a form, how to normalise this form?
+
+1. Unnormalised Form (UNF):
+
+Write down all the attributes in the given form, including any repeating groups.
+
+2. First Normal Form (1NF):  
+
+ Identify the primary key.
+
+Remove repeating groups and ensure that each attribute contains only atomic values.
+
+3. Second Normal Form (2NF):
+
+Remove partial dependencies. Ensure that all non-key attributes are fully functionally dependent on the entire primary key.  
+
+4. Third Normal Form (3NF):
+
+Remove transitive dependencies that non-key columns should not depend on other non-key columns.
+
+After this stage all the non-key columns should depend only on the primary key.
+
+Mostly going up to 3NF for fully normalisation.
+------------------
+
+
+By the end of this week, you should be able to:
+
+**Topic 1: Normalisation**
+
+- analyse different **functional dependencies (FDs)** that can exist among the attributes of a table
+- given a user view, normalise the view and come up with a set of relational tables in the **third normal form (NF)**
+
+**Topic 2: Data manipulation using relational algebra**
+
+- use different relational algebraic operators
+- create relational algebraic expressions for fetching specific data from relational database tables
+- deduce the output of a relational algebraic expression, given a set of relational database tables.
+- 
 ### **Normalization in Relational Databases**  
 **Normalization** is the process of organizing data in a database to:  
 1. **Minimize redundancy** (avoid duplicate data).  
@@ -9,12 +53,12 @@ It involves decomposing tables into smaller, related tables based on **normal fo
 ---
 
 ### **Key Normal Forms (NFs)**  
-| Normal Form  | Rule | Example Violation | Fix |
-|-------------|------|------------------|-----|
-| **1NF**     | All attributes must be atomic (no repeating groups). | A `Students` table with a comma-separated `Courses` column. | Split into `Students` and `Enrollments` tables. |
-| **2NF**     | No partial dependency on a composite primary key. | `OrderDetails` with `(OrderID, ProductID)` as PK, but `ProductName` depends only on `ProductID`. | Move `ProductName` to a `Products` table. |
+| Normal Form | Rule                                                                   | Example Violation                                                                                  | Fix                                             |
+| ----------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| **1NF**     | All attributes must be atomic (no repeating groups).                   | A `Students` table with a comma-separated `Courses` column.                                        | Split into `Students` and `Enrollments` tables. |
+| **2NF**     | No partial dependency on a composite primary key.                      | `OrderDetails` with `(OrderID, ProductID)` as PK, but `ProductName` depends only on `ProductID`.   | Move `ProductName` to a `Products` table.       |
 | **3NF**     | No transitive dependencies (non-key attributes depend only on the PK). | `Employees` table where `DepartmentName` depends on `DepartmentID` (not directly on `EmployeeID`). | Move `DepartmentName` to a `Departments` table. |
-| **BCNF**    | Every determinant must be a candidate key. | A `Course` table where `Professor` → `Department` (assuming professors teach only one department). | Split into `Professors` and `Courses` tables. |
+| **BCNF**    | Every determinant must be a candidate key.                             | A `Course` table where `Professor` → `Department` (assuming professors teach only one department). | Split into `Professors` and `Courses` tables.   |
 
 ---
 
@@ -254,7 +298,7 @@ Need help fixing a specific non-atomic field? Share your table structure! 🛠�
 
 
 ==**Functional Dependency**==
-
+![[Screenshot 2025-05-17 at 14.09.51.png]]
 The most straightforward kind of dependency is called  functional dependency (FD). FD is expressed using a left-hand side, a right-hand side and an arrow.
 
 For example, there might be a table called ‘Lecturer’ in a university database with primary key LecturerID. In this case, we can write an FD as:
@@ -281,3 +325,20 @@ Back to our university database example,
 **LecturerID – > LecturerName**
 
 is a valid FD, since LecturerID determines the value of LecturerName.
+
+--------
+Okay, let's look at how the sources, particularly Chapter 5, explain the interpretation of relations as facts.
+#relations
+#guide
+
+Drawing on Chapter 5 and other relevant sections that discuss the meaning of relations, here are the principles established about how relations can be interpreted as facts:
+
+1. **The Relational Model Represents Databases as Collections of Relations:** The relational model represents the database as a collection of relations. Informally, each relation resembles a table of values.
+2. **Tuples (Rows) Represent Facts:** In the informal view of a relation as a table, each row in the table represents a collection of related data values. This row represents a **fact** that typically corresponds to a real-world entity or relationship. The table name and column names are used to help interpret the meaning of the values in each row.
+3. **Relation Schema as a Declaration/Assertion:** The relation schema (the table name and attribute names) can be interpreted as a **declaration or a type of assertion**. It asserts, in general, that entities or relationships of a certain type exist and possess specific attributes. For example, the schema of the STUDENT relation asserts that a student entity has properties like Name, Ssn, Birth_date, etc..
+4. **Tuples as Instances of the Assertion (Facts):** Each tuple (row) in the relation state (the current data in the table) **==can then be interpreted as a fact or a particular instance of the assertion made by the schema==**. For instance, a specific tuple in the STUDENT relation asserts the fact that there is a particular student entity with specific values for Name, Ssn, and other attributes.
+5. **Representing Facts about Entities and Relationships:** The relational model represents facts about both **entities and relationships uniformly as relations**. While the Entity-Relationship (ER) model explicitly distinguishes between entity types and relationship types, the relational model converts both into relations [36, see also Chapter 9 mappings]. This means a tuple might represent a fact about an entity (like a specific EMPLOYEE) or a fact about a relationship (like an employee working for a department, potentially represented by a foreign key in the EMPLOYEE relation referring to the DEPARTMENT relation, or through a separate relationship relation). Sometimes this uniform representation can compromise understandability.
+6. **Alternative Interpretation as a Predicate:** Another interpretation views the relation schema as a **predicate**. In this view, the values in each tuple are interpreted as values that satisfy this predicate. For example, the predicate STUDENT(Name, Ssn, ...) is true for the tuples in the STUDENT relation state. This interpretation is useful in logical programming and relates to the _closed world assumption_, which states that the only true facts are those present in the current state of the relation(s).
+7. **Semantics Provide Meaning to Facts:** The "semantics" of a relation refers to the meaning derived from the interpretation of attribute values in a tuple. Clear semantics ensure that the real-world meaning of the data and the facts they represent are easily understood. Designing relations based on a careful conceptual model (like ER/EER) and following systematic mapping procedures helps ensure the relational schema has clear semantics and thus a clear meaning as a set of facts.
+
+In essence, Chapter 5 establishes that at its core, the relational model's structure (relations/tables, attributes/columns, and tuples/rows) serves to represent real-world **facts** about entities and their relationships, enabling both declarative (assertion) and logical (predicate) interpretations of the data.

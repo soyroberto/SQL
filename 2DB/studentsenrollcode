@@ -1,0 +1,21 @@
+-- Students Table (Stores student details)
+CREATE TABLE Students (
+    StudentID   INT PRIMARY KEY,
+    StudentName VARCHAR(100)
+);
+
+-- Courses Table (Stores course details)
+CREATE TABLE Courses (
+    CourseID    VARCHAR(10) PRIMARY KEY,
+    CourseName  VARCHAR(100),
+    InstructorName VARCHAR(100)
+);
+
+-- Enrollments Table (Associative table to manage Many-to-Many Relationship)
+CREATE TABLE Enrollments (
+    StudentID   INT,
+    CourseID    VARCHAR(10),
+    PRIMARY KEY (StudentID, CourseID),
+    FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
+);

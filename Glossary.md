@@ -1,0 +1,169 @@
+Righto, here's a glossary of the technical terms mentioned in the sources, drawing upon the information provided:
+
+**Glossary of Database Technical Terms from the Sources:**
+
+- **Active Database System:** A database system that automatically reacts to certain events or conditions by executing pre-defined rules, known as triggers.
+- **Aggregate Functions (in Views):** Functions such as COUNT and SUM that are applied to groups of tuples in a view.
+- **Armstrong’s Inference Rules:** A set of sound and complete rules for inferring functional dependencies. Discussed in Section 15.1.
+- **Atomic Value:** An indivisible value within a domain.
+- **Attribute:** Particular properties that describe an entity. They can be simple, composite, single-valued, multivalued, stored, or derived.
+- **Attribute Preservation Condition:** A condition for decomposition ensuring that each attribute in the original relation will appear in at least one relation schema in the decomposition.
+- **Big Data:** Refers to large amounts of data that systems like NOSQL are designed to handle efficiently.
+- **Binary Lock:** A lock with two states: locked or unlocked, permitting only one transaction access to an item at a time.
+- **Binary Search (on a Disk File):** An algorithm used to efficiently find a record in a file that is ordered by a key field.
+- **Bitmap Index:** An index structure that employs bitmaps to represent the occurrences of values or value ranges in a column.
+- **Blocking Factor (bfr):** The count of records that can fit into one disk block.
+- **Boyce-Codd Normal Form (BCNF):** A normal form considered stricter than 3NF. Relational design algorithms may aim to achieve BCNF. Any relation schema with only two attributes is automatically in BCNF.
+- **B-tree:** A balanced tree data structure utilised for dynamic multilevel indexing.
+- **B+-tree:** A variation of the B-tree commonly used in databases, distinguished by having all data pointers located in the leaf nodes. VSAM is an IBM access method similar to B+-trees.
+- **Buffer:** A reserved area in main storage designated to hold disk blocks for data transfer.
+- **Cardinality Ratio:** A structural constraint applied to binary relationships, indicating the number of relationship instances an entity can participate in (1:1, 1:N, M:N). These ratios are determined from the requirements.
+- **Category (or Union Type):** An Enhanced Entity–Relationship (EER) concept where a subclass represents a subset of the union of two or more superclasses. The superclasses can be of different entity types.
+- **CHECK Clause:** Used in SQL to specify a condition that must be true for data values within a column or a domain.
+- **Client/Server Architecture:** A computing model in which specialised servers provide resources and services to multiple client machines.
+- **Closure of X (X+):** The set of all attributes that are functionally determined by a given set of attributes X, based on a specific set of functional dependencies. Algorithm 15.1 can be used to determine all attributes functionally determined from X.
+- **Clustering Index:** An ordered file featuring entries for each distinct value of a non-key ordering field.
+- **Coarse Granularity:** Refers to large data item sizes when discussing data item granularity.
+- **Composite Attributes:** Attributes that are made up of several component attributes. In ER diagrams, they are attached to their component attributes.
+- **Conceptual Design:** A phase within the database design process that transforms documented requirements into a design that can be represented and manipulated, often using models like the Entity-Relationship model.
+- **Conceptual Level:** Represents the overall logical structure of the database, independently of the physical storage details.
+- **Contiguous Allocation:** A file organisation method where file blocks are allocated to consecutive disk blocks.
+- **Cover (of FDs):** A set of functional dependencies.
+- **CREATE DOMAIN:** An SQL statement used to define a named domain along with specific constraints.
+- **CREATE TRIGGER:** An SQL statement employed to define a trigger.
+- **Cypher:** A high-level query language for the Neo4j graph database. It includes declarative commands for creating, finding, deleting, and modifying data.
+- **Data Item Granularity:** The size of the data items being locked or accessed, such as a record, block, or file.
+- **Data Model Mapping:** The procedure used to create a relational schema from a conceptual schema design based on models like the Entity–Relationship (ER) or Enhanced ER (EER) models. It is also known as the logical database design step.
+- **Data Definition Language (DDL):** Used to specify the conceptual schema in DBMSs that clearly separate conceptual and internal levels. Computer-aided software engineering (CASE) tools convert ER/EER schemas into DDL.
+- **Deductive Database:** Mentioned as a topic with a chapter summary available, related to rules.
+- **Dependency Preservation Property:** A desirable property for relational decompositions, ensuring that all original functional dependencies can be enforced in the decomposed relations.
+- **Derived Attribute:** An attribute whose value can be computed from the values of other attributes. Represented in ER diagrams with a dashed oval.
+- **Dense Index:** An index structure featuring an entry for every record in the data file.
+- **Document Databases:** A category of NOSQL systems that store data in document-like structures. Design options for these include denormalized and normalized patterns.
+- **Domain:** A set of atomic values that can be assigned to an attribute. Also referred to as a value set.
+- **DTD (Document Type Definition):** A language used for specifying the structure of XML documents.
+- **Enhanced Entity–Relationship (EER) Model:** An extension to the basic ER model that includes additional concepts like specialization, generalization, inheritance, and union types (categories). Used for designing more complex database schemas.
+- **Entity:** A basic concept in the ER model, representing a thing or object in the real world with an independent existence, either physical or conceptual. Each entity possesses attributes.
+- **Entity-Relationship (ER) Model:** A high-level conceptual data model frequently used for database design. It describes data using concepts of entities, relationships, and attributes. ER schema diagrams provide a diagrammatic representation of the schema.
+- **Entity Set:** The collection of all entities belonging to a particular entity type. It is also known as the extension of the entity type.
+- **Entity Type:** Defines a collection or set of entities that share the same attributes. It describes the schema or intension for a set of entities. Represented diagrammatically as a rectangular box in ER diagrams. Nouns in database requirements tend to give rise to entity type names.
+- **Equivalence (of FD sets):** Two sets of functional dependencies are considered equivalent if they imply the same set of dependencies. Tested during minimal cover determination.
+- **External or View Level:** Describes only the portion of the database that is visible to a specific user group, concealing the remainder.
+- **Federated Database System (FDBS):** A system where independent and autonomous centralised DBMSs are integrated to some degree, often featuring a global schema. They are classified as a type of distributed database system. Issues in FDBSs can arise from differences in data models.
+- **Fifth Normal Form (5NF or Project-Join Normal Form):** A normal form whose definition is based on join dependencies.
+- **Fine Granularity:** Refers to small data item sizes when discussing data item granularity.
+- **First Normal Form (1NF):** ==**A normal form requiring that relations have no multivalued attributes or nested relations. The remedy is to form new relations for multivalued attributes or nested relations. It is independent of keys and functional dependencie**s.==
+- **Functional Dependency (FD):** A constraint denoted X → Y, indicating that the values of a set of attributes X uniquely determine the values of a set of attributes Y. It is the single most important concept in relational schema design theory and is used to define normal forms.
+- **Functional Dependency Closure:** The set of all attributes that are functionally determined by a given set of attributes X based on a specified set of functional dependencies.
+- **Generalization:** The process of abstracting common properties from multiple classes into a higher-level superclass. It is an EER concept.
+- **Graph Databases:** A category of NOSQL systems that organise data using concepts of nodes and relationships. Neo4j is an example.
+- **Higher-degree Relationship Types:** Relationship types involving more than two entity types.
+- **Horizontal Fragmentation (Sharding):** The process of partitioning a relation into subsets of tuples based on a condition.
+- **Identifying Relationship Type:** The relationship type that connects a weak entity type to its owner entity type, used in conjunction with the weak entity's partial key to identify weak entities. Represented differently in ER diagrams.
+- **IDIRs (Inclusion Dependency Inference Rules):** Rules used for inferring inclusion dependencies.
+- **ISAM (Indexed Sequential Access Method):** An older file organisation method that combines sequential and indexed access.
+- **Inclusion Dependency:** A constraint between two relations where a set of attributes in one relation must appear as a subset of the values of a set of attributes in another relation. Can represent referential integrity constraints and class/subclass constraints.
+- **Incremental Update (of Views):** Updating a materialized view by only applying changes based on modifications to the base relations, rather than recomputing the entire view entirely.
+- **Index Fan-out (fo):** The quantity of entries that can fit into one index block.
+- **Indexed Allocation:** A file organisation method where index blocks contain pointers to the actual file blocks.
+- **Indexing Hints:** Suggestions included in queries to provide guidance to the query optimizer regarding which indexes to use.
+- **Inheritance:** A mechanism in EER where attributes and relationship participations of a superclass are inherited by its subclasses.
+- **Internal Level:** Describes the physical storage structure of the database.
+- **Intention-Exclusive (IX) Lock:** Indicates that exclusive locks will be requested on descendant nodes in a multiple granularity locking protocol.
+- **Intention-Shared (IS) Lock:** Indicates that shared locks will be requested on descendant nodes in a multiple granularity locking protocol.
+- **Join Dependency (JD):** A constraint specifying that every legal state of a relation should have a nonadditive join decomposition into a set of relation schemas. Join dependencies can cause redundancies. Redundancy considered a join dependency may not disturb the 3NF status.
+- **Key Attribute:** An attribute or set of attributes whose values uniquely identify each entity within an entity type.
+- **Knowledge Representation:** An area related to artificial intelligence that deals with representing knowledge. Closely related to semantic data modeling and ontology.
+- **Label (in Graph Databases):** A concept in graph databases used to group nodes that have the same label into a collection for querying purposes. A node can have multiple labels.
+- **Left-hand Side (of an FD):** In a functional dependency X → Y, X is the left-hand side.
+- **Linked Allocation:** A file organisation method where each file block contains a pointer to the subsequent file block.
+- **Logical Design:** A phase in the database design process where the conceptual design is translated into a schema expressed in a data model that can be implemented by a commercial DBMS. Also known as data model mapping.
+- **Map Function:** In the MapReduce programming model, it processes input key/value pairs and emits a list of intermediate key/value pairs.
+- **MapReduce:** A programming model and associated implementation used for processing large datasets on clusters. It involves defining Map and Reduce functions.
+- **Materialized View:** A view whose result is pre-computed and stored, facilitating faster retrieval. Discussed as a query transformation technique.
+- **Minimal Cover (of FDs):** A minimal set of functional dependencies that is equivalent to a given set of dependencies. Used in relational synthesis algorithms.
+- **Multidatabase System:** A system characterised by full local autonomy that constructs a global schema interactively as needed. Classified as a type of distributed database system.
+- **Multilevel Index:** An index structure featuring multiple levels of index blocks, which helps to reduce the number of block accesses needed for searching.
+- **Multiple Granularity Level Locking:** A locking protocol designed to support locking at different levels of the data item hierarchy, such as database, file, page, or record.
+- **Multivalued Attributes:** Attributes that can possess a set of values for a single entity instance. Represented in ER diagrams using double ovals. Relations with multivalued attributes are not in 1NF.
+- **Multivalued Dependency (MVD):** A constraint denoted X →→ Y, indicating that the values of a set of attributes X determine a set of values for a set of attributes Y independently of other attributes. MVDs can introduce redundancies, and nontrivial MVDs cause relations not to be in 4NF.
+- **Nested-Loop Join:** A join algorithm where one relation is iterated over, and for each tuple in the first relation, the second relation is scanned for matching tuples.
+- **Node (in Graph Databases):** A fundamental concept in the graph data model. Nodes can have properties and labels and are connected by relationships.
+- **Nondense (Sparse) Index:** An index structure having fewer entries than there are records, such as one entry per block or per distinct value.
+- **Nontrivial MVD:** A multivalued dependency that is not trivial. Nontrivial MVDs must be addressed by decomposition to achieve 4NF.
+- **Normal Form:** Refers to the highest normal form condition that a relation schema meets. Normal forms provide a means to formally measure the appropriateness of relational schemas based on their keys and functional dependencies.
+- **Normalization:** The process of applying a series of tests (normal form tests) to relation schemas and decomposing them when necessary to satisfy increasingly stringent requirements. It is a relational design technique used to detect and remove undesirable dependencies.
+- **NOSQL Databases:** A class of database systems often interpreted as "Not Only SQL". These systems primarily focus on efficient storage and retrieval of large amounts of "big data" and are typically distributed storage systems that prioritise performance, availability, and scalability over immediate consistency and powerful query languages.
+- **NULL value:** A special value used when the value of an attribute is unknown, does not exist, or is not applicable. It can also appear for foreign keys in category mapping if an entity is not a member of the category.
+- **Ontology:** Considered the most promising basis for achieving the goals of the Semantic Web. It is closely related to knowledge representation and can be viewed as a detailed database schema describing the concepts and relationships of a mini-world.
+- **Owner Entity Type:** In the context of weak entity types, it is the entity type on which a weak entity type depends for its identification.
+- **Partial Key:** A set of attributes belonging to a weak entity type that can uniquely identify weak entities that are related to the same owner entity.
+- **Participation Constraint:** A structural constraint on relationships indicating whether the participation of an entity type in a relationship type is total or partial. Determined from requirements. Can also be specified using minimum and maximum numbers.
+- **Predicate-defined Subclass:** A subclass whose members are determined by satisfying a predicate based on the attributes of the superclass.
+- **Primary Index:** An ordered file containing entries for each block in the data file, using the ordering key field.
+- **Property (in Graph Databases):** Data items associated with nodes and relationships in a graph database. Specified via a map pattern of "name: value" pairs.
+- **Query Graph:** An internal representation of a query, typically a directed acyclic graph (DAG).
+- **Query Optimization:** The process within the DBMS of choosing the most efficient execution plan from many possibilities for a given query. It is performed by the query optimizer.
+- **Query Optimizer:** A component of the DBMS responsible for selecting the most efficient execution plan for a query.
+- **Query Processing:** The techniques used internally by a DBMS to handle high-level queries. This includes scanning, parsing, and validating the query.
+- **Query Tree:** An internal representation of a query, generally structured as a tree. Can be heuristically optimised by reorganising nodes.
+- **Reduce Function:** In the MapReduce programming model, it takes intermediate key and a list of values (associated with that key) as input, aggregates or processes them, and emits the final output.
+- **Relation (or Relation State):** In a relational database, it is a set of tuples corresponding to a relation schema.
+- **Relational Algebra:** A formal language used for querying relational databases. Expressions in relational algebra can be transformed using relational algebra equivalencies.
+- **Relational Algebra Equivalencies:** Rules that enable the transformation of relational algebra expressions into equivalent expressions, which can be used in query optimisation.
+- **Relational Database Schema:** A collection of relation schemas and a set of integrity constraints. A well-designed schema derived from a conceptual design should have clear semantics.
+- **Relational Decomposition:** The process of splitting a relation into multiple relations. This is done during normalisation to remove undesirable dependencies and redundancies. Desirable properties include nonadditive join and dependency preservation.
+- **Relational Extension:** A specific state or set of tuples within a relation at a particular time.
+- **Relational Intension:** The schema of a relation, defining its name and attributes.
+- **Relational Synthesis:** A bottom-up approach to relational database design that starts with a set of functional dependencies and synthesises them into relations. Algorithms exist to achieve desired normal forms and properties.
+- **Relationship (in Graph Databases):** A fundamental concept in the graph data model. Relationships are directed, connecting a start node to an end node, have a type, and can possess properties.
+- **Relationship Instance:** A specific association among individual entities participating in a relationship type. It is an element within a relationship set.
+- **Relationship Set:** The collection of all relationship instances for a given relationship type. Defined as a set of associations among entities from participating entity types.
+- **Relationship Type:** Defines a set of associations among entities from different entity types. A relationship type R among n entity types E1, E2, . . . , En defines a set of associations or a relationship set. Verbs in database requirements can indicate names of relationship types.
+- **Relationship Type (in Graph Databases):** Identifies similar relationships in a graph database. Serves a role similar to node labels.
+- **Requirements Collection and Analysis:** The initial phase of database design where designers work with prospective users to understand and document their data needs. Also called Requirements Specification and Analysis.
+- **Recursive Relationship:** A relationship type in which the same entity type participates more than once, typically in different roles.
+- **Right-hand Side (of an FD):** In a functional dependency X → Y, Y is the right-hand side.
+- **Role Names (in relationships):** Specify the particular role that each participating entity type plays in a relationship type.
+- **Rule Sets:** Groups of triggers in an active database system that can be activated, deactivated, or dropped together.
+- **SDL (Storage Definition Language):** Used to specify the internal schema in database systems that maintain a clear separation between the conceptual and internal levels.
+- **Secondary Index:** An index created on any non-ordering field of a file.
+- **Second Normal Form (2NF):** A normal form. For relations with a composite primary key, no nonkey attribute should be functionally dependent on only a portion of the primary key. The remedy is to decompose the relation. More general definitions consider all candidate keys.
+- **Semantic Web:** An ongoing project aiming to create knowledge representation models on the Web to enable meaningful information exchange and search among machines. XML is considered a core technology for its realisation.
+- **Semistructured Data:** Data where schema information is mixed in with data values. The data doesn't necessarily follow a fixed predefined structure, and data objects can have varying attributes. Sometimes referred to as self-describing data. NOSQL systems often focus on storing this type of data.
+- **Shared/Exclusive (Read/Write) Locks:** A type of lock allowing multiple transactions to read an item concurrently (shared lock) but restricting access to only one transaction at a time for writing (exclusive lock).
+- **Sort-Merge Join:** A join algorithm involving sorting both relations based on the join attributes and then merging the sorted relations to find matches.
+- **Specialization:** The process of defining subclasses from a superclass in the Enhanced Entity–Relationship (EER) model. It is an EER concept.
+- **Spurious Tuples:** Incorrect or redundant tuples that can be generated when joining relations that have been improperly decomposed (i.e., without the nonadditive join property).
+- **SQL/XML:** Extensions to SQL providing functionality to format SQL query results as XML data.
+- **SQLCODE:** An older communication variable used for handling errors in SQL, with codes often being vendor-specific.
+- **SQLSTATE:** A standard communication variable in SQL used to indicate errors or exceptions, where '00000' denotes no error.
+- **Stored Attribute:** An attribute whose value is directly stored in the database, as opposed to being derived.
+- **Structural Constraints (on relationships):** Constraints applied to relationships, such as cardinality ratios and existence dependencies. Can also be specified using (min, max) numbers on participation.
+- **Structured Data:** Data typically stored in traditional databases that conforms to a fixed predefined structure.
+- **Ternary Relationship:** A relationship type that involves three entity types.
+- **Third Normal Form (3NF):** A normal form. Based on primary keys historically, it requires that no nonkey attribute be transitively dependent on the primary key. A more general definition (Section 14.4) states that for every nontrivial functional dependency X → A, either X is a superkey or A is a prime attribute [implied by 84, 14.33]. Decomposition is the remedy for relations not in 3NF. Achieving 3NF or BCNF is often a goal of normalisation.
+- **Transaction:** A logical unit of database processing that comprises one or more database access operations.
+- **Trigger:** A rule in an active database system that defines an action to be automatically executed when a specified event occurs or a condition is met. Triggers are part of active database concepts.
+- **Trigger Action:** The set of operations that are executed when a trigger is fired.
+- **Triggering Event:** The event (e.g., INSERT, DELETE, UPDATE) that causes a trigger to be considered for execution.
+- **Trivial JD:** A join dependency where one of the relation schemas in the decomposition is identical to the original relation schema.
+- **Trivial MVD:** A multivalued dependency X →→ Y where Y is a subset of X or X ∪ Y covers all attributes in the relation schema.
+- **Tuple:** An ordered list of values representing a single record or row in a relation.
+- **UML Class Diagrams:** An alternative notation for conceptual object modeling that can be compared to ER model concepts.
+- **Union Types (Categories):** An EER concept where a subclass is defined as a subset of the union of two or more superclasses. Mapped in EER-to-Relational Step 9.
+- **Universal Relation:** A hypothetical relation containing all the attributes from the universe of discourse. It can be the starting point for some relational design algorithms.
+- **Unstructured Data:** Information, often found on the Web in formats like HTML, where information about the data types of items is missing. It is difficult for computer programs to interpret automatically.
+- **User-defined Subclass:** A subclass whose membership is determined by explicit assignment by the user, not by a predicate.
+- **VDL (View Definition Language):** Used to specify user views and their mappings to the conceptual schema.
+- **VSAM (Virtual Storage Access Method):** An IBM access method that is similar to B+-trees.
+- **Weak Entity Type:** An entity type that cannot be uniquely identified solely by its own attributes. It relies on its relationship with an owner entity type and a partial key of its own for identification. Represented differently in ER diagrams.
+- **Web Services Description Language (WSDL):** Allows for the description of Web Services using XML.
+- **XML (Extensible Markup Language):** A standard for representing and exchanging data, particularly over the Internet. It uses a tree-structured (hierarchical) data model. XML documents can have their structure defined by DTD or XML schema. Data from relational databases can be extracted and formatted as XML.
+- **XML Document:** Contains both tag names and data values. Also called an XML instance document. Can be stored in various ways, including as text files or within a DBMS.
+- **XML Hierarchical (Tree) Data Model:** The data model used by XML, based on tree structures. Contrasts with the flat relational model. Graph structures from relational databases can be converted to this hierarchical form.
+- **XML Schema:** A standard language for specifying the structure of XML documents, using the same syntax rules as XML itself. An XML schema document describes structure, constraints, and other details but contains no data values.
+- **XPath:** A language associated with XML used for querying XML data.
+- **XQuery:** A language associated with XML used for querying XML data.
+- **XSL (Extensible Stylesheet Language):** Can be used to define how an XML document should be rendered for display by a Web browser.
+- **XSLT (Extensible Stylesheet Language for Transformations):** Can be used to transform an XML structure into a different structure.
